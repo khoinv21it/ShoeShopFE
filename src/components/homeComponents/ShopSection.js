@@ -38,16 +38,16 @@ const ShopSection = () => {
   }, [dispatch]);
 
   // Search product
+  // eslint-disable-next-line array-callback-return
   const searchProducts = products?.filter((product) => {
     if (searchProduct === "") {
-      return true; // Trả về true để giữ lại tất cả sản phẩm
+      return product;
     } else if (
       product.name.toLowerCase().includes(searchProduct.toLowerCase())
     ) {
-      return true; // Trả về true để giữ lại sản phẩm
+      return product;
     }
-    return false; // Trả về false để loại bỏ sản phẩm không khớp
-  });  
+  });
 
   // Filter by category
   const handleCategoryChange = (e) => {
