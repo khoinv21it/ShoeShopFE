@@ -40,14 +40,14 @@ const ShopSection = () => {
   // Search product
   const searchProducts = products?.filter((product) => {
     if (searchProduct === "") {
-      return product;
+      return true; // Trả về true để giữ lại tất cả sản phẩm
     } else if (
       product.name.toLowerCase().includes(searchProduct.toLowerCase())
     ) {
-      return product;
+      return true; // Trả về true để giữ lại sản phẩm
     }
-    return true;
-  });
+    return false; // Trả về false để loại bỏ sản phẩm không khớp
+  });  
 
   // Filter by category
   const handleCategoryChange = (e) => {
