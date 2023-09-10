@@ -46,6 +46,7 @@ const ShopSection = () => {
     ) {
       return product;
     }
+    return true;
   });
 
   // Filter by category
